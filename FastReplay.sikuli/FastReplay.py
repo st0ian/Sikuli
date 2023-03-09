@@ -8,20 +8,27 @@ def StopSikuli(event):
 
 Env.addHotkey(Key.F2, KEY_CTRL, StopSikuli)
 
+runs = 0
+print("Starting runs", runs)
 
-while (True): 
-    if exists ("1665819006193.png"):
-        click("1665819006193.png")
-    if exists (Pattern("1666465664947.png").similar(0.56), 1):
-        click (Pattern("1666465664947.png").similar(0.56))
+while (runs <=2):  
+    
+    if exists ("1675292826411.png",2):
+        wait(1)
+        click("1675292826411.png")
+        runs = runs + 1
+    
+    if exists (Pattern("1666465664947.png").similar(0.54), 2):
+        click (Pattern("1666465664947.png").similar(0.54))
         if exists (Pattern("1666465718857.png").similar(0.50),2):
             
             click (Pattern("1666465718857.png").similar(0.50))
             wait (2)
-            click (Pattern("1666465718857.png").similar(0.50))
-    type ("r")
-    wait(5)
+            click (Pattern("1666465718857.png").similar(0.50))   
+            
+print("Total runs", runs)
 
+    
 
 
 
